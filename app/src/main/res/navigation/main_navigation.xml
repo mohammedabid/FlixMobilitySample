@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/timeTableFragment">
+
+    <fragment
+        android:id="@+id/timeTableFragment"
+        android:name="com.example.timetablesample.ui.list.TimeTableFragment"
+        android:label="fragment_meal_search"
+        tools:layout="@layout/fragment_time_table">
+
+    </fragment>
+
+</navigation>
