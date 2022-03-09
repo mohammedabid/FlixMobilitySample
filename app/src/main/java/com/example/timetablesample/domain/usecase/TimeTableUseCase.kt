@@ -21,8 +21,7 @@ class TimeTableUseCase @Inject constructor(private val repository: TimeTableRepo
             emit(Resource.Loading())
             val data = repository.getTimeTable()
             val domainData =
-                if (data.timetable.departures != null)
-                    data.timetable.departures.map { it -> timeTableModelMapper(it)} else emptyList()
+                data.timetable.departures.map { it -> timeTableModelMapper(it)}
             val response = timeTableResponseModelMapper(domainData)
             emit(Resource.Success(data = response))
         } catch (e: HttpException) {

@@ -9,13 +9,13 @@ import java.util.*
 @BindingAdapter(value = ["millis","tz"], requireAll = true)
 fun millisToDate(view: TextView, millis: Long, tz: String) {
 
-//    val c = Calendar.getInstance(TimeZone.getTimeZone(tz))
     val c = Calendar.getInstance()
     c.timeInMillis = millis*1000
     val newDate = c.time
 
-    val sdf = SimpleDateFormat("HH:mm", Locale.US)
+    val sdf = SimpleDateFormat("hh:mm a", Locale.US)
     sdf.timeZone = TimeZone.getTimeZone(tz)
 
     view.text = sdf.format(newDate)
+
 }
